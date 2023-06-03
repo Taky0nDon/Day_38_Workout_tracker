@@ -24,9 +24,9 @@ NUTRI_KEY = os.environ.get("NUTRITIONIX_KEY")
 NUTRI_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
 NUTRI_AUTH = {"x-app-id": NUTRI_ID, "x-app-key": NUTRI_KEY}
 
-SHEETY_POST_ENDPOINT = "https://api.sheety.co/3afe242e7872dca444c6042d879c88a4/copyOfMyWorkouts/workouts"
+SHEETY_POST_ENDPOINT = os.environ.get("SHEETY_ENDPOINT")
 SHEETY_KEY = os.environ.get("SHEETY_KEY")
-SHEETY_HEADER = {"Authorization": "Bearer tc0W6HKg1m1p_-yh4QEDOuGHtN6lGDlJ"}
+SHEETY_HEADER = {"Authorization": f"Bearer {os.environ.get('SHEETY_TOKEN')}"}
 
 user_input: str = input("What exercise have you done today?\n")
 user_gender: str = input("What is your gender?\n")
